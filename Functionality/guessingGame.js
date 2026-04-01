@@ -1,13 +1,10 @@
-function guessFunc(choice){
-    let guessSection=document.getElementById("guessResult");
-    if(choice=='Dog'){
-        guessSection.innerHTML="You guessed correctly!";
-        guessSection.style.color="green";
-    }else if(choice=='Cat'){
-        guessSection.innerHTML="You guessed incorrectly!";
-        guessSection.style.color="red";
-    }else if(choice=='Bird'){
-        guessSection.innerHTML="You guessed incorrectly!";
-        guessSection.innerHTML.style.color="red";
+function guessFunc(){
+    let guessSection=document.getElementById("AnimalInput").value;
+    if(guessSection=="Dog" || guessSection=="dog"){
+        document.getElementById("guessResult").innerHTML=`<p>You guessed correctly!</p>`;
+        document.getElementById("guessResult").style.color="green";
+    }else{
+        document.getElementById("guessResult").innerHTML=`<p>You guessed incorrectly!</p>`;
+        document.getElementById("guessResult").style.color="red";
     }
 }
