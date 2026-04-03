@@ -7,5 +7,12 @@ pipeline {
 		stage('Test'){
 			steps { sh 'mvn test' }
 		}
+		post{
+			success{
+				echo 'Pipeline has successfully completed.'
+			}
+			failure{
+				echo 'The pipeline failed.'
+			}
 	}
 }
