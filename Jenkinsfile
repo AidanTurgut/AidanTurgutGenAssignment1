@@ -7,8 +7,5 @@ pipeline {
 		stage('Test'){
 			steps { sh 'mvn test' }
 		}
-		stage('Deploy'){
-			steps { sh './deploy.sh' }
-		}
 	}
 }
