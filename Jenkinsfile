@@ -1,24 +1,14 @@
-pipeline { 
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Build and Test') {
-            steps {
-                // Use 'sh' instead of 'bat' for Linux
-                sh 'mvn clean test'
-            }
-            post {
-                always {
-                    // Archive the built artifacts
-                    archiveArtifacts artifacts: 'target/*.jar', allowEmptyArchive: true
-                }
-            }
-        }
-    }
+pipeline {
+	agent any
+	stages {
+		stage('Build'){
+			steps { sh 'mvn clean install' }
+		}
+		stage('Test'){
+			steps { sh 'mvn test' }
+		}
+		stage('Deploy'){
+			steps { sh './deploy.sh' }
+		}
+	}
 }
