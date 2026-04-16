@@ -6,12 +6,22 @@
     <title>Guess about Aidan</title>
     <link rel="stylesheet" href="../Styling/guessingGame.css">
 </head>
+<script src="../Functionality/guessingGame.js"></script>
+
 <body>
     <h1>Guess facts about me</h1>
     <p>Guess my favorite animal by selecting one of the buttons below:</p>
-    <button onClick="guessFunc(1)">Dog</button>
-    <button onClick="guessFunc(2)">Cat</button>
-    <button onClick="guessFunc(3)">Bird</button>
+    <form>
+        <input type="text" id="AnimalInput">
+        <button
+            type="submit"
+            onClick="guessFunc()"
+        >
+            Submit
+        </button>
+        
+    </form>
+    
     <br />
     <br />
     
@@ -19,5 +29,4 @@
         
     </section>
 </body>
-<script src="../Functionality/guessingGame.js"></script>
 </html>
